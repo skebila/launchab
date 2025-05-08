@@ -70,12 +70,9 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <button 
-                onClick={handleStartLaunch}
-                className="btn-primary mr-4"
-              >
+            <Link to="/contact" className="btn-primary">
                 Start Your Launch
-              </button>
+            </Link>
 {/*             <a 
               href="https://forms.google.com/your-form-link" 
               target="_blank" 
