@@ -7,6 +7,10 @@ const About = () => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
+ 
+const handleStartLaunch = () => {
+  navigate('/contact');
+};
 
   return (
     <>
@@ -69,14 +73,9 @@ const About = () => {
             
             {/* CTA */}
             <div className="mt-16 text-center">
-              <a 
-                href="https://forms.google.com/your-form-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Start Your Launch
-              </a>
+              const handleStartLaunch = () => {
+                navigate('/contact');
+              };
             </div>
           </div>
         </div>
