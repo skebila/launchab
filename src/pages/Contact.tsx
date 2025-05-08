@@ -1,52 +1,74 @@
 
 import { useEffect, useState } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { useForm } from 'react-hook-form';
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  business: string;
+  message: string;
+};
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    business: '',
-    message: '',
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // In a real implementation, you would send this to your backend
+      // For now, we'll simulate the email sending process
+      console.log("Form submitted:", data);
+      
+      // This is where you would make an API call to your email sending service
+      // Example of what that might look like:
+      // const response = await fetch('/api/send-email', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({
+      //     to: 'hello@launchab.com',
+      //     subject: 'New Client Inquiry from Launchab Website',
+      //     name: data.name,
+      //     email: data.email,
+      //     phone: data.phone,
+      //     business: data.business,
+      //     message: data.message
+      //   }),
+      // });
+      
+      // Simulate successful email sending
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Show success message
       toast({
-        title: "Thanks for submitting!",
-        description: "We'll be in touch within 24 hours to launch your page.",
+        title: "Thanks for reaching out!",
+        description: "We'll get back to you within 24 hours to start your launch.",
       });
       
       // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        business: '',
-        message: '',
-      });
+      reset();
       
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly at hello@launchab.com",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -69,22 +91,21 @@ const Contact = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
                 </label>
-                <input
-                  type="text"
+                <Input
                   id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                   placeholder="Your full name"
+                  {...register("name", { required: "Name is required" })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                )}
               </div>
 
               {/* Email Field */}
@@ -92,16 +113,22 @@ const Contact = () => {
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
-                <input
-                  type="email"
+                <Input
                   id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
+                  type="email"
                   placeholder="your@email.com"
+                  {...register("email", { 
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address"
+                    }
+                  })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                )}
               </div>
 
               {/* Phone Field */}
@@ -109,16 +136,16 @@ const Contact = () => {
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                   Phone Number
                 </label>
-                <input
-                  type="tel"
+                <Input
                   id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
+                  type="tel"
                   placeholder="Your phone number"
+                  {...register("phone", { required: "Phone number is required" })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                 />
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                )}
               </div>
 
               {/* Business Name Field */}
@@ -126,16 +153,15 @@ const Contact = () => {
                 <label htmlFor="business" className="block text-sm font-medium text-gray-700 mb-1">
                   Business Name
                 </label>
-                <input
-                  type="text"
+                <Input
                   id="business"
-                  name="business"
-                  required
-                  value={formData.business}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                   placeholder="Your business name"
+                  {...register("business", { required: "Business name is required" })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                 />
+                {errors.business && (
+                  <p className="text-red-500 text-sm mt-1">{errors.business.message}</p>
+                )}
               </div>
 
               {/* Message Field */}
@@ -143,20 +169,18 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message
                 </label>
-                <textarea
+                <Textarea
                   id="message"
-                  name="message"
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
                   placeholder="Tell us about your business and what you're looking to achieve"
-                ></textarea>
+                  {...register("message")}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
+                />
               </div>
 
               {/* Submit Button */}
               <div className="pt-4">
-                <button
+                <Button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full btn-primary py-4 flex items-center justify-center"
@@ -172,7 +196,7 @@ const Contact = () => {
                   ) : (
                     'Launch My Page'
                   )}
-                </button>
+                </Button>
               </div>
             </form>
           </div>

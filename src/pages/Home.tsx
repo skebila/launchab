@@ -1,13 +1,19 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Rocket, Puzzle, TrendingUp } from 'lucide-react';
 
 const Home = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
+
+  const handleStartLaunch = () => {
+    navigate('/contact');
+  };
 
   return (
     <>
@@ -28,14 +34,12 @@ const Home = () => {
               Launchab builds sleek landing pages for local businesses — designed to generate calls, bookings, and real growth.
             </p>
             <div className="mt-10">
-              <a 
-                href="https://forms.google.com/your-form-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={handleStartLaunch}
                 className="btn-primary mr-4"
               >
                 Start Your Launch
-              </a>
+              </button>
               <Link to="/about" className="text-white border border-white/30 font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
                 Learn More
               </Link>
@@ -129,14 +133,12 @@ const Home = () => {
             <p className="subheading text-white/80 mb-8">
               Get a fast, effective website designed to bring in real business results.
             </p>
-            <a 
-              href="https://forms.google.com/your-form-link" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
+              onClick={handleStartLaunch}
               className="btn-primary text-lg px-8 py-4"
             >
               Start Your Launch
-            </a>
+            </button>
           </div>
         </div>
       </section>
