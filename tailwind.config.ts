@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+                launchab: {
+                    navy: "#0A2540",
+                    orange: "#FF6B35",
+                    light: "#F5F7FA",
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +80,44 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': {
+                        opacity: '0',
+                    },
+                    '100%': {
+                        opacity: '1',
+                    },
+                },
+                'fade-out': {
+                    '0%': {
+                        opacity: '1',
+                    },
+                    '100%': {
+                        opacity: '0',
+                    },
+                },
+                'scale-up': {
+                    '0%': {
+                        transform: 'scale(0.8)',
+                        opacity: '0',
+                    },
+                    '100%': {
+                        transform: 'scale(1)',
+                        opacity: '1',
+                    },
+                },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.5s ease-in-out forwards',
+                'fade-out': 'fade-out 0.5s ease-in-out forwards',
+                'scale-up': 'scale-up 0.5s ease-in-out forwards',
+			},
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
