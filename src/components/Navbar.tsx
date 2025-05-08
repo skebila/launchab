@@ -27,6 +27,11 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  //Handle Start Launch
+  const handleStartLaunch = () => {
+    navigate('/contact');
+  };
+
   // Navigation items
   const navItems = [
     { name: 'Home', path: '/' },
@@ -65,14 +70,20 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <a 
+            <button 
+                onClick={handleStartLaunch}
+                className="btn-primary mr-4"
+              >
+                Start Your Launch
+              </button>
+{/*             <a 
               href="https://forms.google.com/your-form-link" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary"
             >
               Start Your Launch
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile Menu Button */}
