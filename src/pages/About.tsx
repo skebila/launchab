@@ -1,16 +1,18 @@
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
  
-const handleStartLaunch = () => {
-  navigate('/contact');
-};
+  const handleStartLaunch = () => {
+    navigate('/contact');
+  };
 
   return (
     <>
