@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Rocket, Puzzle, TrendingUp } from 'lucide-react';
@@ -97,32 +96,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-{/*       <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="heading-lg text-launchab-navy">
-              Real Results for Real Businesses
-            </h2>
-            <p className="subheading">
-              Don't take our word for it. Here's what our clients have to say.
-            </p>
-          </div>
-
-          <div className="bg-launchab-light rounded-2xl shadow-md p-8 md:p-10 max-w-4xl mx-auto">
-            <div className="text-center">
-              <p className="italic text-xl md:text-2xl text-gray-700 mb-8">
-                "Coming soon: client testimonials from local businesses just like yours."
-              </p>
-              <div className="mt-6">
-                <h4 className="font-bold text-launchab-navy">Future Client</h4>
-                <p className="text-gray-600">Local Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
- */}
       {/* CTA Section */}
       <section className="section-padding bg-launchab-navy text-white">
         <div className="container-custom">

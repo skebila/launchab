@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scroll effect
   useEffect(() => {
@@ -26,6 +27,10 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+
+  const handleStartLaunch = () => {
+    navigate('/contact');
+  };
 
   // Navigation items
   const navItems = [
@@ -65,9 +70,12 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Link to="/contact" className="btn-primary">
-                Start Your Launch
-            </Link>
+            <button 
+              onClick={handleStartLaunch}
+              className="btn-primary"
+            >
+              Start Your Launch
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,9 +108,12 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link to="/contact" className="btn-primary">
+              <button 
+                onClick={handleStartLaunch}
+                className="btn-primary"
+              >
                 Start Your Launch
-            </Link>
+              </button>
             </div>
           </div>
         </div>
