@@ -30,7 +30,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-b from-launchab-navy to-[#051a30] transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-b from-launchab-navy to-[#1A3859] transition-opacity duration-500 ${
         animate ? 'opacity-100' : 'opacity-0'
       }`}
     >

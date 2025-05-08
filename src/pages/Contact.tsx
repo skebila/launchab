@@ -32,8 +32,8 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message received!",
-        description: "Thanks for reaching out. We'll get back to you shortly.",
+        title: "Thanks for submitting!",
+        description: "We'll be in touch within 24 hours to launch your page.",
       });
       
       // Reset form
@@ -59,7 +59,7 @@ const Contact = () => {
               Ready to Launch?
             </h1>
             <p className="text-xl text-white/80">
-              Let's build your presence, get you leads, and make you money.
+              Let's get your business online, seen, and growing — fast.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Contact = () => {
               {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
+                  Full Name
                 </label>
                 <input
                   type="text"
@@ -83,14 +83,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-launchab-orange/30 focus:border-launchab-orange"
-                  placeholder="Your name"
+                  placeholder="Your full name"
                 />
               </div>
 
               {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -107,7 +107,7 @@ const Contact = () => {
               {/* Phone Field */}
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone
+                  Phone Number
                 </label>
                 <input
                   type="tel"

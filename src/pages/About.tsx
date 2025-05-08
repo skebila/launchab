@@ -30,32 +30,32 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl mb-6">
-                Launchab was created for business owners who don't have time to waste. Whether you're a plumber, trainer, landscaper, or local service provider — you need a web presence that works.
+                At Launchab, we believe local businesses are the backbone of every community.
               </p>
               
               <p className="text-lg mb-6">
-                We specialize in lightning-fast, single-page websites that look great and convert visitors into paying clients. No complicated navigation, no excessive features — just a clean, professional page that helps potential customers contact you.
+                You don't need a 20-page website or a big ad agency.
+              </p>
+              
+              <p className="text-lg mb-6 font-medium">
+                You need one page.
               </p>
 
-              <h2 className="text-2xl font-bold mt-12 mb-4 text-launchab-navy">
-                Our Philosophy
-              </h2>
+              <p className="text-lg mb-6">
+                One page that looks good, loads fast, and gets the phone ringing.
+              </p>
               
               <p className="text-lg mb-6">
-                While most web agencies focus on selling you expensive, complex websites with features you'll never use, we take a different approach:
+                We specialize in lightning-fast, mobile-friendly landing pages that are built for one thing: results.
               </p>
 
-              <ul className="space-y-3 list-disc pl-5 mb-10">
-                <li className="text-lg">
-                  <span className="font-medium">Focus on results</span> — Your website should generate calls and leads, not just look pretty
-                </li>
-                <li className="text-lg">
-                  <span className="font-medium">Speed matters</span> — Both in how quickly we deliver and how fast your site loads for users
-                </li>
-                <li className="text-lg">
-                  <span className="font-medium">Simplicity wins</span> — Clear calls to action and straightforward design beat flashy gimmicks
-                </li>
-              </ul>
+              <p className="text-lg mb-6">
+                Whether you're a contractor, a trainer, a landscaper, or a moving company — we build digital storefronts that get you more leads, more calls, and more customers.
+              </p>
+
+              <p className="text-lg font-medium">
+                We move fast because business doesn't wait. Neither should you.
+              </p>
 
               <div className="mt-12 p-6 bg-launchab-orange/10 rounded-2xl border border-launchab-orange/20">
                 <h3 className="text-xl font-bold mb-3 text-launchab-navy">
@@ -69,9 +69,14 @@ const About = () => {
             
             {/* CTA */}
             <div className="mt-16 text-center">
-              <Link to="/contact" className="btn-primary">
+              <a 
+                href="https://forms.google.com/your-form-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
                 Start Your Launch
-              </Link>
+              </a>
             </div>
           </div>
         </div>

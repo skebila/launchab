@@ -32,7 +32,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    // Projects page hidden for now
+    // Projects page hidden from navigation
   ];
 
   return (
@@ -65,9 +65,14 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Link to="/contact" className="btn-primary">
+            <a 
+              href="https://forms.google.com/your-form-link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Start Your Launch
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,13 +105,15 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link 
-                to="/contact" 
+              <a 
+                href="https://forms.google.com/your-form-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="btn-primary mt-6"
                 onClick={() => setIsOpen(false)}
               >
                 Start Your Launch
-              </Link>
+              </a>
             </div>
           </div>
         </div>

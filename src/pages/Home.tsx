@@ -28,9 +28,14 @@ const Home = () => {
               Launchab builds sleek landing pages for local businesses — designed to generate calls, bookings, and real growth.
             </p>
             <div className="mt-10">
-              <Link to="/#features" className="btn-primary mr-4">
+              <a 
+                href="https://forms.google.com/your-form-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary mr-4"
+              >
                 Start Your Launch
-              </Link>
+              </a>
               <Link to="/about" className="text-white border border-white/30 font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
                 Learn More
               </Link>
@@ -59,7 +64,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-launchab-navy mb-3">Speed</h3>
               <p className="text-gray-600">
-                We deliver your page within 48 hours. No endless meetings or revisions.
+                Your page live in 48 hours or less.
               </p>
             </div>
 
@@ -70,7 +75,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-launchab-navy mb-3">Simplicity</h3>
               <p className="text-gray-600">
-                No fluff, no stress. One page. One goal. We focus on what drives results.
+                No complicated designs. One page. One clear goal: grow your business.
               </p>
             </div>
 
@@ -81,7 +86,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-launchab-navy mb-3">Growth</h3>
               <p className="text-gray-600">
-                Your phone rings more. That's our mission. We design for conversions, not awards.
+                More clicks, more calls, more customers. That's the Launchab promise.
               </p>
             </div>
           </div>
@@ -124,9 +129,14 @@ const Home = () => {
             <p className="subheading text-white/80 mb-8">
               Get a fast, effective website designed to bring in real business results.
             </p>
-            <Link to="/contact" className="btn-primary text-lg px-8 py-4">
+            <a 
+              href="https://forms.google.com/your-form-link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-primary text-lg px-8 py-4"
+            >
               Start Your Launch
-            </Link>
+            </a>
           </div>
         </div>
       </section>

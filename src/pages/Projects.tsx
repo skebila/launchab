@@ -18,7 +18,7 @@ const Projects = () => {
               Our Projects
             </h1>
             <p className="text-xl text-white/80">
-              We're building success stories. Portfolio coming soon.
+              Exciting projects are launching soon. Stay tuned!
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const Projects = () => {
                 Building Success Stories
               </h2>
               <p className="text-xl text-gray-600">
-                Our portfolio is under construction. Check back soon to see examples of our work.
+                Exciting projects are launching soon. Stay tuned!
               </p>
             </div>
 
