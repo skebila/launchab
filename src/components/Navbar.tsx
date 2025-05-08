@@ -73,14 +73,6 @@ const Navbar = () => {
             <Link to="/contact" className="btn-primary">
                 Start Your Launch
             </Link>
-{/*             <a 
-              href="https://forms.google.com/your-form-link" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Start Your Launch
-            </a> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,15 +105,9 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <a 
-                href="https://forms.google.com/your-form-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary mt-6"
-                onClick={() => setIsOpen(false)}
-              >
+              <Link to="/contact" className="btn-primary">
                 Start Your Launch
-              </a>
+            </Link>
             </div>
           </div>
         </div>
