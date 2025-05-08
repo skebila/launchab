@@ -33,12 +33,10 @@ const Contact = () => {
       
       // This is where you would make an API call to your email sending service
       // Example of what that might look like:
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://formspree.io/f/xovdwzdv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'hello@launchab.com',
-          subject: 'New Client Inquiry from Launchab Website',
           name: data.name,
           email: data.email,
           phone: data.phone,
