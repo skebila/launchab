@@ -27,11 +27,6 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  //Handle Start Launch
-  const handleStartLaunch = () => {
-    navigate('/contact');
-  };
-
   // Navigation items
   const navItems = [
     { name: 'Home', path: '/' },
