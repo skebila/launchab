@@ -73,9 +73,12 @@ const handleStartLaunch = () => {
             
             {/* CTA */}
             <div className="mt-16 text-center">
-              const handleStartLaunch = () => {
-                navigate('/contact');
-              };
+              <button 
+                onClick={handleStartLaunch}
+                className="btn-primary text-lg px-8 py-4"
+              >
+                Start Your Launch
+              </button>
             </div>
           </div>
         </div>
