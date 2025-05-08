@@ -98,7 +98,7 @@ const Home = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="section-padding bg-white">
+{/*       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="heading-lg text-launchab-navy">
@@ -122,7 +122,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+ */}
       {/* CTA Section */}
       <section className="section-padding bg-launchab-navy text-white">
         <div className="container-custom">
