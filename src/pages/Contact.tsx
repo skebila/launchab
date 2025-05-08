@@ -33,19 +33,19 @@ const Contact = () => {
       
       // This is where you would make an API call to your email sending service
       // Example of what that might look like:
-      // const response = await fetch('/api/send-email', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({
-      //     to: 'hello@launchab.com',
-      //     subject: 'New Client Inquiry from Launchab Website',
-      //     name: data.name,
-      //     email: data.email,
-      //     phone: data.phone,
-      //     business: data.business,
-      //     message: data.message
-      //   }),
-      // });
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: 'hello@launchab.com',
+          subject: 'New Client Inquiry from Launchab Website',
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          business: data.business,
+          message: data.message
+        }),
+      });
       
       // Simulate successful email sending
       await new Promise(resolve => setTimeout(resolve, 1000));
