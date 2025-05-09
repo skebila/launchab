@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,7 +40,7 @@
     --background: 210 75% 15%;
     --foreground: 0 0% 98%;
 
-    --card: 210 70% 18%;
+    --card: 210 75% 18%;
     --card-foreground: 0 0% 98%;
 
     --popover: 210 75% 15%;
@@ -76,7 +77,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-launchab-orange text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.03] dark:bg-launchab-orange/90;
+    @apply bg-launchab-orange text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.03] dark:bg-launchab-orange/90 dark:hover:bg-launchab-orange dark:shadow-lg dark:shadow-launchab-orange/20;
   }
   
   .container-custom {
@@ -103,7 +104,7 @@
   .btn-enhanced {
     @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.05] 
            hover:shadow-[0_0_15px_rgba(255,107,53,0.5)] active:scale-[0.98]
-           dark:hover:shadow-[0_0_15px_rgba(255,120,76,0.4)];
+           dark:hover:shadow-[0_0_15px_rgba(255,120,76,0.4)] dark:border dark:border-launchab-orange/20;
   }
 
   /* Hover card effect */
@@ -118,7 +119,6 @@
            flex flex-col justify-end p-6;
   }
   
-  /* Using direct class notation instead of @apply with group */
   .hover-card:hover .hover-card-overlay {
     @apply opacity-100;
   }
@@ -127,7 +127,6 @@
     @apply transform translate-y-8 transition-transform duration-300;
   }
 
-  /* Using direct class notation instead of @apply with group */
   .hover-card:hover .hover-card-content {
     @apply translate-y-0;
   }
@@ -163,11 +162,29 @@
   }
 
   .dark-input {
-    @apply dark:bg-launchab-navy-secondary dark:border-white/20 dark:focus:border-launchab-orange-muted;
+    @apply dark:bg-[#1B3A57] dark:border-[#2E4F6D] dark:text-white dark:placeholder-gray-400;
   }
 
   .dark-section {
     @apply dark:bg-launchab-navy-light;
+  }
+  
+  /* Card with proper dark mode styling */
+  .feature-card {
+    @apply bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow
+           dark:bg-[#132D44] dark:border dark:border-white/10 dark:shadow-lg dark:shadow-black/20;
+  }
+  
+  /* Form fields with enhanced dark mode */
+  .form-field {
+    @apply w-full rounded-md border border-gray-300 px-4 py-3 bg-white text-gray-800 focus:border-launchab-orange focus:ring focus:ring-launchab-orange/20 outline-none transition duration-200
+           dark:bg-[#1B3A57] dark:border-[#2E4F6D] dark:text-white dark:placeholder-gray-400 dark:focus:border-launchab-orange-muted dark:focus:ring-launchab-orange-muted/30;
+  }
+  
+  /* CTA section styling */
+  .cta-section {
+    @apply bg-launchab-navy text-white
+           dark:bg-gradient-to-b dark:from-launchab-navy dark:to-[#0A1F33] dark:border-t dark:border-white/5;
   }
 }
 
@@ -175,5 +192,13 @@
   .text-gradient {
     @apply bg-gradient-to-r from-launchab-orange to-amber-500 bg-clip-text text-transparent 
            dark:from-launchab-orange-muted dark:to-amber-400;
+  }
+  
+  .navy-gradient {
+    @apply bg-gradient-to-b from-launchab-navy to-[#0A1F33];
+  }
+  
+  .navy-gradient-light {
+    @apply bg-gradient-to-b from-launchab-navy-light to-launchab-navy;
   }
 }

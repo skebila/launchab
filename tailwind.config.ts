@@ -57,6 +57,8 @@ export default {
                     navy: "#0A2540",
                     "navy-light": "#132D44",
                     "navy-secondary": "#0F1D2A",
+                    "navy-form": "#1B3A57",
+                    "navy-border": "#2E4F6D",
                     orange: "#FF6B35",
                     "orange-muted": "#FF784C",
                     light: "#F5F7FA",
