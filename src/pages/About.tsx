@@ -103,7 +103,7 @@ const About = () => {
             </div>
 
             {/* Stats Section */}
-            <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+{/*             <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center fade-up">
                 <AnimatedCounter end={48} suffix="h" />
                 <p className="mt-2 text-gray-700 dark:text-gray-300">Delivery Time</p>
@@ -116,7 +116,7 @@ const About = () => {
                 <AnimatedCounter end={250} suffix="+" />
                 <p className="mt-2 text-gray-700 dark:text-gray-300">Websites Launched</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
