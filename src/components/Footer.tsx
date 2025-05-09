@@ -42,7 +42,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-white/10 text-sm text-white/50 flex flex-col md:flex-row justify-between">
-          <p>© {currentYear} Launchab. Built with hustle in Toronto.</p>
+          <p>© {currentYear} Launchab.</p>
           <p>For builders, doers, and local hustlers.</p>
         </div>
       </div>
