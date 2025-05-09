@@ -30,37 +30,29 @@ const About = () => {
         </div>
       </section>
 
-      {/* Main Content Section */}
+      {/* Main Content Section - Updated with new content */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl mb-6">
-                At Launchab, we believe local businesses are the backbone of every community.
+                At Launchab, we build websites designed to grow your business — not just sit pretty.
               </p>
               
               <p className="text-lg mb-6">
-                You don't need a 20-page website or a big ad agency.
+                Whether it's a single landing page or a full multi-page site, our focus is simple: create fast, modern websites that convert visitors into real customers.
               </p>
               
-              <p className="text-lg mb-6 font-medium">
-                You need one page.
+              <p className="text-lg mb-6">
+                We craft clean, mobile-first designs that are optimized to drive more calls, bookings, and inquiries — without the fluff.
               </p>
 
               <p className="text-lg mb-6">
-                One page that looks good, loads fast, and gets the phone ringing.
-              </p>
-              
-              <p className="text-lg mb-6">
-                We specialize in lightning-fast, mobile-friendly landing pages that are built for one thing: results.
-              </p>
-
-              <p className="text-lg mb-6">
-                Whether you're a contractor, a trainer, a landscaper, or a moving company — we build digital storefronts that get you more leads, more calls, and more customers.
+                From contractors to trainers, landscapers to creatives, we help local businesses show up online and stand out in their space.
               </p>
 
               <p className="text-lg font-medium">
-                We move fast because business doesn't wait. Neither should you.
+                Business moves fast. Your website should too.
               </p>
 
               <div className="mt-12 p-6 bg-launchab-light rounded-2xl border border-launchab-orange/20">
