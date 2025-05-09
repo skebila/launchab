@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,32 +36,32 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 75% 15%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 70% 18%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 75% 15%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 0 0% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 65% 22%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 65% 22%;
+    --muted-foreground: 215 20.2% 75%;
 
-    --accent: 20 100% 50%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 20 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 210 65% 25%;
+    --input: 210 65% 25%;
     --ring: 212.7 26.8% 83.9%;
   }
 
@@ -103,12 +102,14 @@
   /* Enhanced button effect with glow */
   .btn-enhanced {
     @apply relative overflow-hidden transition-all duration-300 hover:scale-[1.05] 
-           hover:shadow-[0_0_15px_rgba(255,107,53,0.5)] active:scale-[0.98];
+           hover:shadow-[0_0_15px_rgba(255,107,53,0.5)] active:scale-[0.98]
+           dark:hover:shadow-[0_0_15px_rgba(255,120,76,0.4)];
   }
 
   /* Hover card effect */
   .hover-card {
-    @apply relative overflow-hidden rounded-2xl cursor-pointer;
+    @apply relative overflow-hidden rounded-2xl cursor-pointer
+           dark:bg-launchab-navy-secondary dark:border dark:border-white/10;
   }
 
   .hover-card-overlay {
@@ -155,10 +156,24 @@
   .zoom-in.appear {
     @apply opacity-100 scale-100;
   }
+
+  /* Dark mode specific components */
+  .dark-card {
+    @apply bg-launchab-navy-secondary border border-white/10 shadow-lg dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)];
+  }
+
+  .dark-input {
+    @apply dark:bg-launchab-navy-secondary dark:border-white/20 dark:focus:border-launchab-orange-muted;
+  }
+
+  .dark-section {
+    @apply dark:bg-launchab-navy-light;
+  }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-launchab-orange to-amber-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-launchab-orange to-amber-500 bg-clip-text text-transparent 
+           dark:from-launchab-orange-muted dark:to-amber-400;
   }
 }

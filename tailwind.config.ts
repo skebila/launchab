@@ -55,7 +55,10 @@ export default {
 				},
                 launchab: {
                     navy: "#0A2540",
+                    "navy-light": "#132D44",
+                    "navy-secondary": "#0F1D2A",
                     orange: "#FF6B35",
+                    "orange-muted": "#FF784C",
                     light: "#F5F7FA",
                 }
 			},
