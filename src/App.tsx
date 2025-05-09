@@ -66,7 +66,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />
-              <WhatsAppButton phoneNumber="+1234567890" />
+{/*               <WhatsAppButton phoneNumber="+1234567890" /> */}
             </>
           )}
         </BrowserRouter>
