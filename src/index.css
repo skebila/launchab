@@ -108,17 +108,27 @@
 
   /* Hover card effect */
   .hover-card {
-    @apply relative overflow-hidden group cursor-pointer rounded-2xl;
+    @apply relative overflow-hidden rounded-2xl cursor-pointer;
   }
 
   .hover-card-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent 
-           opacity-0 group-hover:opacity-100 transition-opacity duration-300
+           opacity-0 transition-opacity duration-300
            flex flex-col justify-end p-6;
+  }
+  
+  /* Using direct class notation instead of @apply with group */
+  .hover-card:hover .hover-card-overlay {
+    @apply opacity-100;
   }
 
   .hover-card-content {
-    @apply transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300;
+    @apply transform translate-y-8 transition-transform duration-300;
+  }
+
+  /* Using direct class notation instead of @apply with group */
+  .hover-card:hover .hover-card-content {
+    @apply translate-y-0;
   }
 
   /* Scroll animations */

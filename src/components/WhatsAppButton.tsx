@@ -1,5 +1,5 @@
 
-import { WhatsApp } from "lucide-react";
+import { MessagesSquare } from "lucide-react"; // Using MessagesSquare instead of WhatsApp
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -19,7 +19,7 @@ const WhatsAppButton = ({ phoneNumber, message = "Hello! I'm interested in your 
       className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center"
       aria-label="Chat on WhatsApp"
     >
-      <WhatsApp size={28} />
+      <MessagesSquare size={28} />
     </a>
   );
 };
