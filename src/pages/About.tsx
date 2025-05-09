@@ -16,14 +16,14 @@ const About = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="pt-28 md:pt-36 pb-16 md:pb-24 bg-launchab-light">
+      {/* Hero Section - Updated with contrasting design */}
+      <section className="pt-28 md:pt-36 pb-16 md:pb-24 bg-gradient-to-br from-launchab-navy to-launchab-navy/90">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-lg text-launchab-navy mb-6">
+            <h1 className="heading-lg text-white mb-6">
               Made for Builders, Doers, <br />and Local Hustlers
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white/80">
               We're not a fancy agency. We're builders like you.
             </p>
           </div>
@@ -63,7 +63,7 @@ const About = () => {
                 We move fast because business doesn't wait. Neither should you.
               </p>
 
-              <div className="mt-12 p-6 bg-launchab-orange/10 rounded-2xl border border-launchab-orange/20">
+              <div className="mt-12 p-6 bg-launchab-light rounded-2xl border border-launchab-orange/20">
                 <h3 className="text-xl font-bold mb-3 text-launchab-navy">
                   Why choose Launchab?
                 </h3>
