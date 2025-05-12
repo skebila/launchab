@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -112,9 +111,9 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Nav Menu - Fixed position for all pages */}
+          {/* Mobile Nav Menu - Full screen for all pages */}
           <div
-            className={`fixed inset-0 bg-[#0A2540] dark:bg-[#0A2540] z-40 flex flex-col transition-all duration-300 ease-in-out ${
+            className={`fixed inset-0 w-screen h-screen bg-[#0A2540] dark:bg-[#0A2540] z-40 flex flex-col transition-all duration-300 ease-in-out ${
               isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             } md:hidden`}
           >
