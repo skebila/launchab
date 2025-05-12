@@ -79,7 +79,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-launchab-navy mb-3 dark:text-white">Simplicity</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                No complicated designs. One page. One clear goal: grow your business.
+                Clean, effective design with one clear goal: grow your business.
               </p>
             </div>
 
