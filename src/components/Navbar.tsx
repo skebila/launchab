@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -21,6 +22,19 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   const handleStartLaunch = () => {
     navigate('/contact');
@@ -98,13 +112,24 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Nav Menu */}
+          {/* Mobile Nav Menu - Updated for fixed position */}
           <div
-            className={`fixed inset-0 bg-[#0A2540] dark:bg-[#0A2540] z-40 transform transition-all duration-300 ease-in-out ${
+            className={`fixed inset-0 bg-[#0A2540] dark:bg-[#0A2540] z-40 flex flex-col transition-all duration-300 ease-in-out ${
               isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             } md:hidden`}
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            {/* Close button at the top right */}
+            <div className="p-4 flex justify-end">
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:text-launchab-orange transition-colors p-2"
+                aria-label="Close menu"
+              >
+                <X className="h-8 w-8" />
+              </button>
+            </div>
+            
+            <div className="flex flex-col items-center justify-center h-full space-y-8 pb-20">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
