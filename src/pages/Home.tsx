@@ -68,7 +68,7 @@ const Home = () => {
               </div>
               <h3 className="text-xl font-bold text-launchab-navy mb-3 dark:text-white">Speed</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Your page live in 48 hours or less.
+                Your project prioritized and delivered on schedule.
               </p>
             </div>
 
