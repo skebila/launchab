@@ -112,7 +112,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Nav Menu - Updated for fixed position */}
+          {/* Mobile Nav Menu - Fixed position for all pages */}
           <div
             className={`fixed inset-0 bg-[#0A2540] dark:bg-[#0A2540] z-40 flex flex-col transition-all duration-300 ease-in-out ${
               isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
